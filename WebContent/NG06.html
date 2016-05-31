@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS ng repeat directive</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG06.js"></script>
+</head>
+<body ng-app="AngularJS06Module">
+	<h1>AngularJS ng repeat directive</h1>
+	<table ng-controller="getEmpInformation">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Salary</th>
+			</tr>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.fname}}</td>
+				<td>{{employee.lname}}</td>
+				<td>{{employee.salary}}</td>
+			</tr>
+		</thead>
+	</table>
+</body>
+</html>

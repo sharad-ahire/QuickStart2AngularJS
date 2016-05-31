@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS nested ng repeat directive</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG06.js"></script>
+</head>
+<body ng-app="AngularJS06Module">
+	<h1>AngularJS nested ng repeat directive</h1>
+
+	<div ng-controller="getCountryInformation">
+		<ul ng-repeat="states in contryInfo">
+			<li>{{states.name}}
+				<ul ng-repeat="city in states.cities">
+					<li>{{city.name}}</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
