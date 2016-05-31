@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS ng-src demo</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG04.js"></script>
+</head>
+<body ng-controller="mycontroller">
+	<div>Country: {{country.name}}</div>
+	<div>Currency: {{country.currency}}</div>
+	<div>
+		<img ng-src="{{country.flag}}" alt="{{country.name + ' Flag'}}"
+			style="width: 50px; height: 40px" />
+	</div>
+	<div>Description: {{country.description}}</div>
+</body>
+</html>

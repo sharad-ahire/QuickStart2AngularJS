@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG05.js"></script>
+<title>AngularJS tutorial</title>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		Update the greeting: <input type="text" ng-model="greeting" /> <br />{{message}}
+		<br /> greeting: {{greeting}}
+	</div>
+	<br />
+	<br />
+	<div ng-controller="compController">
+		First Name: {{student.fname}} <br /> Last Name: {{student.lname}} <br />
+		Gender: {{student.gender}}
+	</div>
+</body>
+</html>
