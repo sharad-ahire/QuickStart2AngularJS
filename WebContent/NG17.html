@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app>
+	<h1>The ng-init directive allows you to evaluate an expression in
+		the current scope.</h1>
+	<h5>In the following example, the ng-init directive initializes
+		employees variable which is then used in the ng-repeat directive to
+		loop thru each employee. In a real world application you should use a
+		controller instead of ng-init to initialize values on a scope.</h5>
+	<div
+		ng-init="employees = [ 
+		{fname : 'AAA',cname : 'A1 Systems',salary : 10000,}, 
+		{fname : 'BBB',cname : 'B1 Systems',salary : 20000}, 
+		{fname: 'CCC',cname : 'C1 Systems',salary : 30000}, 
+		{fname: 'DDD',cname : 'D1Systems',salary: 40000} 
+		]">
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>Emp Name</th>
+					<th>Comp Name</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees ">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.cname }}</td>
+					<td>{{employee.salary }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
