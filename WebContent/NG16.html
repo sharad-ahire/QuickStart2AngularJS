@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS filters</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG16.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS16Module">
+
+	<h1>ng-hide and ng-show directives in Angular</h1>
+	<div ng-controller="getAllEmployees">
+		<br /> <input type="checkbox" ng-model="hideSalary" /> Hide Salary <br />
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>Emp Name</th>
+					<th>Comp Name</th>
+					<th ng-hide="hideSalary">Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees ">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.cname }}</td>
+					<td ng-hide="hideSalary">{{employee.salary }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
