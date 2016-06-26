@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS filters</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG09.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS09Module">
+
+	<h1>Sorting data in AngularJS</h1>
+	<div ng-controller="getAllEmployees">
+		Sort By: <select ng-model="sortColumn">
+			<option value="fname">Name ASC</option>
+			<option value="dob">Date Of Birth Desc</option>
+			<option value="gender">Gender by Asc</option>
+			<option value="-salary">Salary Desc</option>
+			<option value="+salary">Salary Asc</option>
+		</select> <br /> <br />
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Date Of Birth</th>
+					<th>Gender</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | orderBy:sortColumn">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.dob | date:MM:dd:yyyy}}</td>
+					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.salary | number}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS filters</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG13.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS12Module">
+
+	<h1>Angularjs filter by multiple properties using multiple search
+		text fields</h1>
+	<div ng-controller="getAllEmployees">
+		<br /> <br /> <input type="text" placeholder="Search Employee Name"
+			ng-model="searchText.fname" /> <input type="text"
+			placeholder="Search City" ng-model="searchText.city" /> <br /> <input
+			type="checkbox" ng-model="exactMatch" /> Exact Match
+		<table>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Date Of Birth</th>
+					<th>Gender</th>
+					<th>City</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter:searchText:exactMatch">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.dob | date:MM:dd:yyyy}}</td>
+					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.city}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS filters</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG11.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS11Module">
+
+	<h1>AngularJS sort rows by table header</h1>
+	<div ng-controller="getAllEmployees">
+		<br /> <br />
+		<table>
+			<thead>
+				<tr>
+					<th ng-click="sortData('fname')">First Name
+						<div ng-class="getSortClass('fname')"></div>
+					</th>
+					<th ng-click="sortData('dob')">Date Of Birth
+						<div ng-class="getSortClass('dob')"></div>
+					</th>
+					<th ng-click="sortData('gender')">Gender
+						<div ng-class="getSortClass('gender')"></div>
+					</th>
+					<th ng-click="sortData('salary')">Salary
+						<div ng-class="getSortClass('salary')"></div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.dob | date:MM:dd:yyyy}}</td>
+					<td>{{employee.gender | lowercase}}</td>
+					<td>{{employee.salary | number}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

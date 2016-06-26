@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS filters</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG15.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS15Module">
+
+	<h1>Create a custom filter in AngularJS</h1>
+	<div ng-controller="getAllEmployees">
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>Emp Name</th>
+					<th>Comp Name</th>
+					<th>Access Level</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter:search">
+					<td>{{employee.fname | uppercase}}</td>
+					<td>{{employee.cname }}</td>
+					<td>{{employee.accessLevel | convertToAL }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
