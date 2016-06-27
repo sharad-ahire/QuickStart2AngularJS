@@ -14,5 +14,6 @@ var AngularJS18Controller = ngmodule.controller("NGController", function(
 	                {ename : "EEE", ecomp:"C5",esalary:50000}
 	              ];
 	$scope.employees= employees;
-	$scope.empdatafile = "EmpTableData.html"
+	$scope.emptableview = "EmpTableData.html"
+	$scope.emplistview = "EmpListData.html"
 });

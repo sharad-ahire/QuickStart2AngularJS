@@ -18,7 +18,11 @@
 		HTML page..</p>
 	<hr>
 	<div ng-controller="NGController">
-		<ng-include src="empdatafile"></ng-include>
+		<select ng-model="emptableview">
+			<option value="EmpTableData.html">Table View</option>
+			<option value="EmpListData.html">List View</option>
+		</select> <br /> <br />
+		<div ng-include="emptableview"></div>
 	</div>
 </body>
 </html>
