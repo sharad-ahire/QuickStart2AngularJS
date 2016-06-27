@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG19.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="NGModule">
+	<h1>ng include directive in AngularJS.</h1>
+	<hr>
+	<p>ng-include directive is used to embed an HTML page into another
+		HTML page. This technique is extremely useful when you want to reuse a
+		specific view in multiple pages in your application. The value of
+		ng-include directive can be the name of the HTML page that you want to
+		reuse or a property on the $scope object that points to the reusable
+		HTML page..</p>
+	<hr>
+	<div ng-controller="NGController">
+		<ng-include src="empdatafile"></ng-include>
+	</div>
+</body>
+</html>
