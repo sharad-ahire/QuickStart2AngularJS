@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG18.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="AngularJS18Module">
+	<h1>The ng-init directive allows you to evaluate an expression in
+		the current scope.</h1>
+	<h5>In the following example, the ng-init directive initializes
+		employees variable which is then used in the ng-repeat directive to
+		loop thru each employee. In a real world application you should use a
+		controller instead of ng-init to initialize values on a scope.</h5>
+	<div ng-controller="getCountries">
+		<ul>
+			<li ng-repeat="country in countries" ng-init="parentIndex = $index">{{country.name}}
+				<ul>
+					<li ng-repeat="city in country.cities">{{city.name}} -
+						ParentIndex={{parentIndex}},ChildIndex={{$index}}</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
