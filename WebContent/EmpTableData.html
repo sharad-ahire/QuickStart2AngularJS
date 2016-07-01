@@ -1,14 +1,14 @@
 <table>
 	<thead>
 		<tr>
-			<td>Emp Name</td>
-			<td>Company</td>
+			<td>Emp ID</td>
+			<td>Name</td>
 			<td>Salary</td>
 		</tr>
 	</thead>
 	<tr ng-repeat="employee in employees">
+		<td>{{employee.eid}}</td>
 		<td>{{employee.ename}}</td>
-		<td>{{employee.ecomp}}</td>
 		<td>{{employee.esalary}}</td>
 	</tr>
 </table>

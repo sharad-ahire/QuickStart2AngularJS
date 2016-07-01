@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG20.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="NGModule">
+	<h1>Consuming Restful Web Service in AngularJS using $http</h1>
+	<hr>
+	<p>We will discuss how to consume an ASP.NET Web Service in an
+		AngularJS application.</p>
+	<p>Here is what we want to do 1. Create an Restful Web service.
+		This web service retrieves the employee hard coded data returns it in
+		JSON formt. 2. Call the web service using AngularJS and display
+		employee data on the web page</p>
+	<hr>
+	<div ng-controller="NGController">
+		Response Status:{{respStatus}}<br>
+		Response Message:{{respMessage}}
+		<hr>
+		<br /> <br /> <br />
+		<table>
+			<thead>
+				<tr>
+					<td>EmpID</td>
+					<td>Name</td>
+					<td>Salary</td>
+				</tr>
+			</thead>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.eid}}</td>
+				<td>{{employee.ename}}</td>
+				<td>{{employee.esalary}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
