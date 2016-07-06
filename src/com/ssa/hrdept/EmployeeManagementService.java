@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.ssa.hrdept.dao.EmployeeManagementSvcDAO;
+import com.ssa.hrdept.model.BusinessUnit;
 import com.ssa.hrdept.model.Employee;
 
 @Path("EmployeeService")
@@ -32,6 +33,16 @@ public class EmployeeManagementService {
 		Employee employee = doaObject.getEmployee(empID);
 		System.out.println("End getEmployee");
 		return employee;
+	}
+
+	@GET
+	@Path("listBU")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<BusinessUnit> getAllBusinessUnits() {
+		System.out.println("Begining getAllBusinessUnits");
+		List<BusinessUnit> listBUs = doaObject.getAllBUs();
+		System.out.println("End getAllBusinessUnits");
+		return listBUs;
 	}
 
 	@GET

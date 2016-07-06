@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="AnchorApplication">
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG23.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-controller="AnchorController">
+	<h1>Angular anchorscroll with dynamic dataset from upsteam systems</h1>
+	<hr>
+	<span ng-repeat="unit in businessUnits">
+		<button ng-click="navigate(unit.buName)">{{unit.buName}}</button>
+	</span>
+	<br />
+	<br />
+	<div class="containerDiv">
+		<fieldset ng-repeat="unit in businessUnits" id="{{unit.buName}}">
+			<legend>{{unit.buName}}</legend>
+			<ul>
+				<li ng-repeat="employee in employees">{{employee.ename}}</li>
+			</ul>
+		</fieldset>
+	</div>
+</body>
+</html>
