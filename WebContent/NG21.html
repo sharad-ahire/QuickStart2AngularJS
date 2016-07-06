@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learn AngularJS</title>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/NG21.js"></script>
+<script src="Scripts/MathService.js"></script>
+<link href="css/AngularJS.css" rel="stylesheet" />
+</head>
+<body ng-app="NGModule">
+	<h1>Create custom service in AngularJS</h1>
+	<hr>
+	<div ng-controller="NGController">
+		<br /> <br />
+		<table>
+			<tr>
+				<td><input type="text" placeholder="number1" ng-model="number1" /></td>
+				<td><input type="text" placeholder="number2" ng-model="number2" /></td>
+				<td><input type="text" placeholder="output" ng-model="output" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" ng-click="addNumbers(number1,number2)"
+					value="Addition(+)" /></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
